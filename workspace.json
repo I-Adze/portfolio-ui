@@ -1,6 +1,27 @@
 {
   "version": 2,
   "projects": {
+    "common": {
+      "root": "libs/common",
+      "sourceRoot": "libs/common/src",
+      "projectType": "library",
+      "targets": {
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/common/**/*.{ts,tsx,js,jsx}"]
+          }
+        },
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/common"],
+          "options": {
+            "jestConfig": "libs/common/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
     "portfolio-ui": {
       "root": "apps/portfolio-ui",
       "sourceRoot": "apps/portfolio-ui/src",
@@ -15,10 +36,7 @@
             "main": "apps/portfolio-ui/src/main.tsx",
             "polyfills": "apps/portfolio-ui/src/polyfills.ts",
             "tsConfig": "apps/portfolio-ui/tsconfig.app.json",
-            "assets": [
-              "apps/portfolio-ui/src/favicon.ico",
-              "apps/portfolio-ui/src/assets"
-            ],
+            "assets": ["apps/portfolio-ui/src/favicon.ico", "apps/portfolio-ui/src/assets"],
             "styles": ["apps/portfolio-ui/src/styles.scss"],
             "scripts": [],
             "webpackConfig": "@nrwl/react/plugins/webpack"

@@ -1,12 +1,11 @@
 module.exports = {
-  displayName: 'portfolio-ui',
+  displayName: 'common',
   preset: '../../jest.preset.js',
   transform: {
-    '^(?!.*\\.(js|jsx|ts|tsx|css|json)$)': '@nrwl/react/plugins/jest',
     '^.+\\.[tj]sx?$': 'babel-jest',
   },
   moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx'],
-  coverageDirectory: '../../coverage/apps/portfolio-ui',
+  coverageDirectory: '../../coverage/libs/common',
   collectCoverage: true,
   coverageThreshold: {
     global: {

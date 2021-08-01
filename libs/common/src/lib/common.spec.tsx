@@ -1,11 +1,9 @@
 import { render } from '@testing-library/react';
+import Common from './common';
 
-import App from './app';
-
-describe('App', () => {
+describe('Common', () => {
   it('should render successfully', () => {
-    const { baseElement } = render(<App />);
-
+    const { baseElement } = render(<Common />);
     expect(baseElement).toBeTruthy();
   });
 });
